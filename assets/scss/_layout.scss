@@ -59,7 +59,7 @@ hr {
   padding-bottom: .08em;
   border-bottom: 2px solid $light-gray-color;
 
-  @include transition(border 300ms linear);
+  //@include transition(border 300ms linear);
 
   &:hover,
   &:focus,
@@ -170,7 +170,7 @@ hr {
   }
 
   a, span {
-    font-size: rem(12);
+    font-size: 075em;
     padding: .5em;
   }
 
@@ -209,7 +209,7 @@ hr {
 
   small {
     display: block;
-    font-size: rem(12);
+    font-size: 0.75em;
     color: darken($medium-gray-color, 10%);
   }
 }
