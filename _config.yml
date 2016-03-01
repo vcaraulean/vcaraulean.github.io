@@ -4,7 +4,7 @@ title: valeriu.caraulean
 description: "Valeriu Caraulean: personal site & blog"
 keywords: "valeriu carualean, .net, geneva, .net developer, .net user group, genevadnug, blog, web"
 url: http://caraulean.com
-baseurl: null
+#baseurl: null
 
 #google_analytics: UA-52446115-1
 repo: http://github.com/vcaraulean/vcaraulean.github.io
@@ -12,19 +12,19 @@ repo: http://github.com/vcaraulean/vcaraulean.github.io
 
 # Build settings
 permalink   : /:year/:title/
-markdown    : kramdown
-highlighter : rouge
+#markdown    : kramdown
+#highlighter : rouge
 
 paginate: 10
 paginate_path: "/page/:num/"
 comments: true
 
-destination: _site
+#destination: _site
 
 # Sass configuration
 sass:
   sass_dir: assets/scss
-  style: compressed # expanded
+  #style: compressed # expanded
 
 # Author settings
 author:
@@ -43,9 +43,9 @@ author:
 twitter_card: "summary_large_image"
 twitter_site: "@vcaraulean"
 
-#gems:
-#  - bourbon
-#  - jekyll-paginate
+gems:
+  - bourbon
+  - jekyll-paginate
 
 # navbar pages
 navbar:
