@@ -1,0 +1,18 @@
+---
+layout: page
+title: Error 404
+footer: false
+---
+<p>You've been looking for something and hit a dead end? You've been redirected here and it's not what you've expected? I'm sorry...</p>
+
+<p>You can look in <strong>Archives</strong> or use the <strong>Search</strong> to find what you've been looking for...</p>
+
+<p>Good luck!</p>
+
+<h3>Last 20 posts in this blog: </h3>
+
+<div itemscope itemtype="http://schema.org/Blog">
+{% for post in site.posts reverse limit: 20 %}
+	{% include archive_post.html %}
+{% endfor %}
+</div>
