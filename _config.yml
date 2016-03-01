@@ -12,8 +12,8 @@ repo: http://github.com/vcaraulean/vcaraulean.github.io
 
 # Build settings
 permalink   : /:year/:title/
-#markdown    : kramdown
-#highlighter : rouge
+markdown    : kramdown
+highlighter : rouge
 
 paginate: 10
 paginate_path: "/page/:num/"
@@ -24,7 +24,7 @@ comments: true
 # Sass configuration
 sass:
   sass_dir: assets/scss
-  #style: compressed # expanded
+  style: compressed # expanded
 
 # Author settings
 author:
