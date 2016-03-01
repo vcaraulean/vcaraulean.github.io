@@ -43,9 +43,9 @@ author:
 twitter_card: "summary_large_image"
 twitter_site: "@vcaraulean"
 
-gems:
-  - bourbon
-  - jekyll-paginate
+#gems:
+#  - bourbon
+#  - jekyll-paginate
 
 # navbar pages
 navbar:
