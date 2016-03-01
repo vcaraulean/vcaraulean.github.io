@@ -1,22 +1,21 @@
 
 # SEO settings
-title: Simplest
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-#baseurl: "/simplest"
+title: valeriu.caraulean
+description: "Valeriu Caraulean: personal site & blog"
+keywords: "valeriu carualean, .net, geneva, .net developer, .net user group, genevadnug, blog, web"
+url: http://caraulean.com
 baseurl: null
 
-google_analytics: UA-52446115-1
-repo: http://github.com/nandomoreirame/simplest
-disqus_shortname: "fernandomoreira"
+#google_analytics: UA-52446115-1
+repo: http://github.com/vcaraulean/vcaraulean.github.io
+#disqus_shortname: "fernandomoreira"
 
 # Build settings
 permalink   : /:year/:title/
 markdown    : kramdown
 highlighter : rouge
 
-paginate: 4
+paginate: 10
 paginate_path: "/page/:num/"
 comments: true
 
@@ -29,21 +28,20 @@ sass:
 
 # Author settings
 author:
-  name     : Fernando Moreira
-  job      : Frontend Engineer
-  bio      : "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
-  thumb    : /images/author.jpg
-  email    : nandomoreira.me@gmail.com
-  url      : http://nandomoreira.me
-  github   : http://github.com/nandomoreirame
-  twitter  : http://twitter.com/nandomoreirame
-  facebook : http://facebook.com/fernando.dev
-  linkedin : http://linkedin.com/in/nandomoreirame
+  name     : Valeriu Caraulean
+  job      : Software engeneer
+  bio      : "Enthusiast developer and architect with main focus on everything around .NET and some Microsoft technologies"
+  thumb    : /images/me.png
+  email    : valeriu@caraulean.com
+  url      : http://caraulean.com
+  github   : http://github.com/vcaraulean
+  twitter  : http://twitter.com/vcaraulean
+  linkedin : http://ch.linkedin.com/in/vcaraulean
 
 # social settings
-og_locale: "pt_BR"
+#og_locale: "pt_BR"
 twitter_card: "summary_large_image"
-twitter_site: "@nandomoreirame"
+twitter_site: "@vcaraulean"
 
 gems:
   - bourbon

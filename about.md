@@ -6,7 +6,7 @@ comments: true
 sharing: true
 footer: true
 ---
-![me](images/me.png){: height="150px" width="150px" align="right"}
+![me](/images/me.png){: height="150px" width="150px" align="right"}
 
 Hi there! My name is Valeriu Caraulean and this is my personal site and blog.
 
@@ -20,9 +20,9 @@ When I've started this blog the goal was to practice writing in English. Then it
 
 My online presence:
 
-- [@vcaraulean in Twitter](http://twitter.com/vcaraulean)
-- [GitHub profile](http://github.com/vcaraulean)
-- [LinkedIn profile](http://ch.linkedin.com/in/vcaraulean) with the summary of my professional experience and expertise.
+* [@vcaraulean in Twitter](http://twitter.com/vcaraulean)
+* [GitHub profile](http://github.com/vcaraulean)
+* [LinkedIn profile](http://ch.linkedin.com/in/vcaraulean) with the summary of my professional experience and expertise.
 
 If you want to contact me, [write me](http://www.google.com/recaptcha/mailhide/d?k=01cF2fQCfG5KEJrgjvDCJ09A==&c=K2TmolNNZMRm4QqPdLzo-UxtUJwZrmaXZNAAvkVvsSA=) an email.
 
