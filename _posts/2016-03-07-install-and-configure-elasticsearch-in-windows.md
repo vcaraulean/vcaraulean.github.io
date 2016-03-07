@@ -8,7 +8,7 @@ categories: elasticsearch
 
 *Recently I had to install & configure Elasticsearch and took some notes about it for further reference. Everything down here is actual at the moment of writing, March 2016 and Elasticsearch version 2.2.0.*
 
-Elasticsearch's [official site](https://www.elastic.co/)
+[Elasticsearch official site](https://www.elastic.co/)
 
 ## Prerequisites
 
