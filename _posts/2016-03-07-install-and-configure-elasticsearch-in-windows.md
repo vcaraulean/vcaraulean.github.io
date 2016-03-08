@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Install and configure Elasticsearch in Windows"
-date: 2016-03-07 23:23
+date: 2016-03-07 20:20
 comments: true
 categories: elasticsearch 
 ---
