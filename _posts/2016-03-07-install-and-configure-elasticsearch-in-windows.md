@@ -41,6 +41,16 @@ Uncomment `network.host` and set value to `_site`:
     
 This will make elasticserch available under machine's site name. Example: `http://servername:9200`.
 
+### Set the heap size 
+By default Elasticsearch will reserve 1 GB for it's heap. For most installations it's not enough. Set it appropriatelly to RAM available on your servers and server load. To set the heap size you have to create a system environment variable (more details [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html) here:
+
+    ES_HEAP_SIZE: 4g
+
+### Set field data cache size
+If you have data that often changes or becomes obsolete (like log messages) it's useful to [set the field data cache size](https://www.elastic.co/guide/en/elasticsearch/guide/current/_limiting_memory_usage.html)  in your config file:
+
+    indices.fielddata.cache.size: 40%
+
 ### (optional) Install web interface for management and monitoring
 
 Recomended tool: https://github.com/royrusso/elasticsearch-HQ. To install, from `{install-path}` run next command:
