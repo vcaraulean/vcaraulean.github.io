@@ -13,7 +13,8 @@ categories: elasticsearch
 ## Prerequisites
 
 ### Java Runtime
-Verify Java runtime installation. Latest JDK 8 is strongly recommended. 
+
+Verify installed version of Java Runtime Environment or [install it](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html). Latest JDK 8 is strongly recommended. 
 
  - Check available JDK using command line: `java -version`. Expected output: `java version 1.8.0_73`. Last numbers might be different, but `1.8` is expected.
  - Check system variables. Required environment variable: JAVA_HOME pointing to install location of JDK. Example: 
@@ -51,19 +52,19 @@ If you have data that often changes or becomes obsolete (like log messages) it's
 
     indices.fielddata.cache.size: 40%
 
-### (optional) Install web interface for management and monitoring
+### (optional) Install web interface for monitoring
 
-Recomended tool: https://github.com/royrusso/elasticsearch-HQ. To install, from `{install-path}` run next command:
+Recomended tool: [kopf](https://github.com/lmenezes/elasticsearch-kopf). To install, from `{install-path}` run next command:
 
-    {install-path}\bin\plugin.bat install royrusso/elasticsearch-HQ
+    {install-path}\bin\plugin.bat install menezes/elasticsearch-kopf/2.0
 
-If install is failing download the plugin to a temporary location and install it from a file:
+If install is failing to download or install check plugin's homepage. If nothing works, download  plugin to a temporary location and install it from a file:
 
-    bin\plugin install d:\temp\royrusso-elasticsearch-HQ-v2.0.3-2-gfe18bc4.zip
+    bin\plugin install d:\temp\{path downloaded plugin zip file}
 
-If that is not working, unzip the content of plugin to `{install-path}\plugins\hq` and restart the service.
+If even that is not working, unzip content of downloaded file to `{install-path}\plugins\kopf` and restart the service.
 
-Plugin should be accessible at: `http://servername:9200/_plugin/hq` 
+Plugin should be accessible at: `http://servername:9200/_plugin/kopf` 
 
 ### Configure to run as a service
  - Install elasticsearch service. Open command line and navigate to installation folder. Execute `bin\service.bat install`. 
@@ -71,5 +72,30 @@ Plugin should be accessible at: `http://servername:9200/_plugin/hq`
  - Start the service
 
 ## Checks (post-configure & post-install)
-- After service is started check the logs for any errors.
-- Open `http://machinename:9200/` in browser. No web page is opened but request should succeed by returning a JSON content or file.
+- After starting the service check logs for any errors.
+- Open `http://machinename:9200/` in browser. No web page is opened but request should succeed by returning a JSON response or a file (depending on the browser).
+- If any of monitoring plugins is installed check there the state of your cluster and nodes (for example on `http://machinename:9200/_plugin/kopf`)
+
+## Setting up a basic cluster
+
+If you want the simplest configuration but you want a your cluster to have some redundancy and good performance - then Elastic's default settings will work well for you. Say, for redundancy and query distribution you want to run an ES cluster on 2 (or `n` nodes). Then your starting point will be a very basic `elasticsearch.yml` (example for 2 nodes):
+
+First node:
+
+    cluster.name: my-es-cluster
+    node.name: my-es-node-one
+    network.host: _site_            # this will make ES available via host/mashine name
+    http.port: 9200                 # listening endpoint
+    discovery.zen.ping.unicast.hosts: ["es-host-1", "es-host-2"]
+
+Second node:
+
+    cluster.name: my-es-cluster
+    node.name: my-es-node-two
+    network.host: _site_
+    http.port: 9200
+    discovery.zen.ping.unicast.hosts: ["es-host-1", "es-host-2"]
+
+Notice that the only difference is the node name.
+
+Pretty self-explanatory. This should be enough to get you a working cluster of 2 boxes where both nodes will be master-eligible and data nodes and only one node will be playing the role of master node. But you can still query getting them processed on any of nodes. More about network settings
