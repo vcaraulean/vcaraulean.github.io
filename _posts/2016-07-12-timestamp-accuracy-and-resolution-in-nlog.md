@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Timestamp accuracy and resolution in NLog"
-date: 2016-07-12 21:01
+date: 2016-07-12 21:02
 comments: true
 categories: nlog, .net
 ---
