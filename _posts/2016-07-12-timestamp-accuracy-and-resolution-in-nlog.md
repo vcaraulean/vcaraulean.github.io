@@ -5,6 +5,7 @@ date: 2016-07-12 21:02
 comments: true
 categories: nlog, .net
 ---
+
 In one of internal projects we got a situation where our log management system was displaying entries from NLog in wrong "logical" order, despite being explicitly ordered by timestamp. 
 
 Here are few insights I got after investigating the case.
