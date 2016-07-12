@@ -71,12 +71,12 @@ Both of the `accurate` time sources are using respectively current values of Dat
 
 I actually wondered, how much is the difference in performance will be between `fast` and `accurate` TimeSource implementations? [BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) to the rescue! [I quickly put together a benchmark](https://gist.github.com/vcaraulean/6a0e3201ea7889e06bd35391bba0d521) that measured the difference between using different time sources. Results are quite interesting:
 
-        Method |      Median |     StdDev |
--------------- |------------ |----------- |
-     FastLocal |   5.7752 ns |  0.3450 ns |
-       FastUtc |   5.8330 ns |  0.4939 ns |
- AccurateLocal | 784.4354 ns | 61.6136 ns |
-   AccurateUtc |   7.0547 ns |  0.3934 ns |
+|        Method |      Median |     StdDev |
+|-------------- |------------ |----------- |
+|     FastLocal |   5.7752 ns |  0.3450 ns |
+|       FastUtc |   5.8330 ns |  0.4939 ns |
+| AccurateLocal | 784.4354 ns | 61.6136 ns |
+|   AccurateUtc |   7.0547 ns |  0.3934 ns |
 
 Quite telling: `fast` implementations are the fastest but, as we've seen before, timestamps are cached and not that precise. `AccurateUTC` is a very close runner. If you're asking, why is this not the default time source, the response probably will be the dreaded `backward compatibility`, as time sources were added around NLog 2.x. 
 
