@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating to new csproj format"
-date: 2016-07-12 21:02
+date: 2018-02-18 22:00
 comments: true
 categories: .net, csproj
 ---
@@ -36,7 +36,8 @@ There's an important difference while using new `PackageReference` compared to p
  
  - Remove AssemblyInfo.cs. Check if it contains any useful attributes & set them in project properties or csproj directly
  - Remove packages.config
- - Check if project contains any content/resource files. Include them explicitly in csproj.
+ - Check if project contains any content/resource files. Include them explicitly in csproj:
+
 ```
   <ItemGroup>
     <Content Include="Mappings.csv">
