@@ -38,10 +38,20 @@ There's an important difference while using new `PackageReference` compared to p
  - Remove packages.config
  - Check if project contains any content/resource files. Include them explicitly in csproj.
 ```
-	  <ItemGroup>
-	    <Content Include="Mappings.csv">
-	      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    </Content>
-	  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mappings.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 ```
 
+## Pitfalls & possible issues
+
+ - New project will pick up *all* .cs files. Some leftovers might get in the project. Fix: review & remove unnecessary.
+ - Warnings about binding redirects. Fix: open `app.config` and remove mentioned assemblies. 
+ - Compilation errors in `AssemblyInfo.cs` about duplicated definitions. Fix: remove AssemblyInfo.cs
+ - Output folder now includes target framework moniker. Example: `bin\Debug\net462`. If any build or deployment scripts are relying on old path, then it has to be fixed.
+ - Additional files that have to exist in output folder aren't automatically included. Fix: any additional resource files have to be included explicitly in new csproj. 
+ - `Directory.GetCurrentDirectory()` returns a different thing than before. Affects `Directory.Exists`, `Directory.CreateDirectory` and probably any other API that are accepting relative paths. Apparently, new CLI tooling is setting default *Working Directory* (in both VS2017 and Rider) to location of the project file, contrary to output folder.
+
+ 
