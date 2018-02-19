@@ -55,4 +55,10 @@ There's an important difference while using new `PackageReference` compared to p
  - Additional files that have to exist in output folder aren't automatically included. Fix: any additional resource files have to be included explicitly in new csproj. 
  - `Directory.GetCurrentDirectory()` returns a different thing than before. Affects `Directory.Exists`, `Directory.CreateDirectory` and probably any other API that are accepting relative paths. Apparently, new CLI tooling is setting default *Working Directory* (in both VS2017 and Rider) to location of the project file, contrary to output folder.
 
- 
+## Build server woes (TeamCity)
+
+We've got TeamCity on the build duty. Few things were needed there to support building of new project format:
+
+ - Update Nuget Tools to a version that supports the new msbuild tooling (4.x will do)
+ - To get the new msbuild tools on agents most reasonable option will be to use [Build Tools for Visual Studio 2017](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017). 
+ - If you're getting this error: `error MSB4236: The SDK 'Microsoft.NET.Sdk' specified could not be found.` then install `.NET Core Build Tools` payload. Event if the app isn't targeting .NET Core, this payload is still needed to correctly handle `PackageReference` in csproj.
