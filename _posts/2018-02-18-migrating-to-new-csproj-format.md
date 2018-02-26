@@ -62,3 +62,4 @@ We've got TeamCity on the build duty. Few things were needed there to support bu
  - Update Nuget Tools to a version that supports the new msbuild tooling (4.x will do)
  - To get the new msbuild tools on agents most reasonable option will be to use [Build Tools for Visual Studio 2017](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017). 
  - If you're getting this error: `error MSB4236: The SDK 'Microsoft.NET.Sdk' specified could not be found.` then install `.NET Core Build Tools` payload. Event if the app isn't targeting .NET Core, this payload is still needed to correctly handle `PackageReference` in csproj.
+ - Build configuration was probably stamping the assembly with version. Previously common approach was to update `AssemblyInfo.cs` before passing it to `msbuild`. As we got rid of this file, we can achieve same results by passing `Version` parameter to `msbuild`.
