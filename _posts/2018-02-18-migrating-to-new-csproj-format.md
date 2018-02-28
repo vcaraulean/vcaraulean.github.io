@@ -10,6 +10,12 @@ We've got a bunch of projects at work that are using the _old style_ project fil
 
 This is a *how to* guide on how to approach a such migration and description of few tricky moments and issues encountered.
 
+## Read the docs...
+
+... or at least keep them at hand:
+
+ - [The _new_ csproj format](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj)
+
 ## Upgrading the project
 
 Simplest part. Replace the context of csproj with these lines:
