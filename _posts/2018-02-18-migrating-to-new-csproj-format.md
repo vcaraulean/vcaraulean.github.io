@@ -42,7 +42,10 @@ There's an important difference while using new `PackageReference` compared to p
  
  - Remove AssemblyInfo.cs. Check if it contains any useful attributes & set them in project properties or csproj directly
  - Remove packages.config
- - Check if project contains any content/resource files. Include them explicitly in csproj:
+
+### Dealing with embedded resources
+
+If project contains any content/resource files, Include them explicitly in csproj:
 
 ```
   <ItemGroup>
@@ -52,9 +55,17 @@ There's an important difference while using new `PackageReference` compared to p
   </ItemGroup>
 ```
 
+Or, as embedded resources using wildcards:
+
+```
+  <ItemGroup>
+    <EmbeddedResource Include=".\**\*.json" Exclude=".\bin\**\*.json;.\obj\**\*.json" />
+  </ItemGroup>
+```
+
 ## Pitfalls & possible issues
 
- - New project will pick up *all* .cs files. Some leftovers might get in the project. Fix: review & remove unnecessary.
+ - New project will pick up *all* .cs files in the project file directories and sub-directories. Some leftovers might get in the project. Fix: review & remove unnecessary.
  - Warnings about binding redirects. Fix: open `app.config` and remove mentioned assemblies. 
  - Compilation errors in `AssemblyInfo.cs` about duplicated definitions. Fix: remove AssemblyInfo.cs
  - Output folder now includes target framework moniker. Example: `bin\Debug\net462`. If any build or deployment scripts are relying on old path, then it has to be fixed.
