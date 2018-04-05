@@ -63,6 +63,16 @@ Or, as embedded resources using wildcards:
   </ItemGroup>
 ```
 
+## Nuget integration
+
+The new msbuild took over for some manipulations related to nuget packages. So this area will need to be reviewed. Some particular items:
+
+ - `nuspec` files, if used, have to be referenced from csproj files explicitly
+ - `nuspec` files can be avoided completely and properties defined [directly in csproj](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties)
+ - `nuget pack` will not work anymore. `dotnet pack` or the equivalent `msbuild /t:pack` have to be used to generate nuget packages. 
+
+Actually, the common package related pattern will be: `msbuild /t:restore;build;pack`.
+
 ## Pitfalls & possible issues
 
  - New project will pick up *all* .cs files in the project file directories and sub-directories. Some leftovers might get in the project. Fix: review & remove unnecessary.
