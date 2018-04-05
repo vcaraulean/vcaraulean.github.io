@@ -71,6 +71,7 @@ Or, as embedded resources using wildcards:
  - Output folder now includes target framework moniker. Example: `bin\Debug\net462`. If any build or deployment scripts are relying on old path, then it has to be fixed.
  - Additional files that have to exist in output folder aren't automatically included. Fix: any additional resource files have to be included explicitly in new csproj. 
  - `Directory.GetCurrentDirectory()` returns a different thing than before. Affects `Directory.Exists`, `Directory.CreateDirectory` and probably any other API that are accepting relative paths. Apparently, new CLI tooling is setting default *Working Directory* (in both VS2017 and Rider) to location of the project file, contrary to output folder.
+ - `nuget pack` will not work anymore. `dotnet pack` or the equivalent `msbuild /t:pack` have to be used to generate nuget packages. 
 
 ## Build server woes (TeamCity)
 
