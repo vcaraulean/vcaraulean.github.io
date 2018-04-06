@@ -42,6 +42,7 @@ There's an important difference while using new `PackageReference` compared to p
  
  - Remove AssemblyInfo.cs. Check if it contains any useful attributes & set them in project properties or csproj directly
  - Remove packages.config
+ - Remove `packages` folder in solution root
 
 ### Dealing with embedded resources
 
