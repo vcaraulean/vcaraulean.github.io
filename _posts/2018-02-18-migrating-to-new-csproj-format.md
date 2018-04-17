@@ -16,6 +16,13 @@ This is a *how to* guide on how to approach a such migration and description of 
 
  - [The _new_ csproj format](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj)
 
+## Prerequisites
+
+Using the Visual Studio Installer check that you have next components:
+
+ - .NET Core cross-platform development workload
+ - Targeting packs and SDKs for the version of the framework that you're targeting
+
 ## Upgrading the project
 
 Simplest part. Replace the context of csproj with these lines:
