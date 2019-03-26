@@ -7,7 +7,7 @@ class: center, middle
 
 Valeriu Caraulean 
 
-[@vcaraulean]() | [valeriu@caraulean.com]()
+[@vcaraulean]() | [valeriu at caraulean dot com]()
 
 ---
 # Agenda
