@@ -6,7 +6,7 @@ class: center, middle
 ## Remote Procedure Calls for Modern Services
 
 Valeriu Caraulean 
-
+for Geneva .NET User Group, 26 March 2019
 [@vcaraulean]() | [valeriu at caraulean dot com]()
 
 ---
