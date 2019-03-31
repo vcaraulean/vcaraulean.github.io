@@ -12,7 +12,7 @@ Valeriu Caraulean
 ---
 # Agenda
 
-.center.margin-top-100px[![gRPC](Assets/gRPC logo.png)]
+.center.margin-top-100px[![gRPC](assets/grpc-logo.png)]
 
 .center.margin-top-100px[Talk, Code, Demos]
 
